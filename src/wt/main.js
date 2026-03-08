@@ -1,9 +1,5 @@
-import { Worker } from 'worker_threads';
-import { cpus } from 'os';
-import { promises as fs } from 'fs';
-import { resolve } from 'path';
-
 const main = async () => {
+
   const dataPath = resolve(process.cwd(), 'data.json');
   let data;
   try {
