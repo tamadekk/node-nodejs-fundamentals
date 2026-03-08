@@ -12,7 +12,7 @@ const main = async () => {
     console.error('Failed to read data.json');
     return;
   }
-
+  // dump commit
   const numCores = cpus().length;
   const chunkSize = Math.ceil(data.length / numCores);
   const workers = [];
@@ -31,7 +31,7 @@ const main = async () => {
   }
 
   const sortedChunks = await Promise.all(workers);
-  
+
   // k-way merge
   const result = [];
   const indices = new Array(numCores).fill(0);
